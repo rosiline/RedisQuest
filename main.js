@@ -2,7 +2,9 @@ const inquirer = require('inquirer');
 const redis = require('redis');
 const { welcome, getExistingQuests, quest } = require('./questions');
 
-const client = redis.createClient();
+const client = redis.createClient({
+  host: process.env.REDIS_HOST
+  }); //connect to redis server from docker environment variable
 
 function runApp() {
   inquirer

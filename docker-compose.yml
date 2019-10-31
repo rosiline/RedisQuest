@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  redis-server:
+    image: redis:alpine
+    volumes:
+      - my-redis-cache:/data # from redis docs, where data is stored
+  redis-app:
+    build: .
+    depends_on:
+      - redis-server
+    environment:
+      - REDIS_HOST=redis-server
+    #  - REDIS_URL=redis://redis-server, can use host or url in main.js
+volumes:
+  my-redis-cache:
