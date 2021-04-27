@@ -19,6 +19,6 @@
   "homepage": "https://github.com/northcoders/grad-docker-compose-redis-example#readme",
   "dependencies": {
     "inquirer": "^7.0.0",
-    "redis": "^2.8.0"
+    "redis": "^3.1.1"
   }
 }
